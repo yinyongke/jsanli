@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#biao{width: 500px;
+			height: 200px;
+				margin: 100px auto;
+			}
+			#biao label{
+				width: 60px;
+				float: left;
+			}
+			#biao input,span{
+				width: 200px;
+				height: 30px;
+				float: left;
+			}
+			span{
+				background-color: pink;
+				text-indent: 2em;
+			   line-height: 35px;
+			   height: 35px;
+			}
+			#biao span.rigth{
+				background:url(img/right.png) no-repeat 3px 2px ;
+			}
+			#biao span.wrong{
+				background:url(img/wrong.png)no-repeat 3px 2px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="biao" >
+			<label>高数：</label>
+			<input type="text" />
+			<span>输入数字</span>
+		</div>
+		<script>
+			var input=document.getElementsByTagName("input")[0];
+			var span=document.getElementsByTagName("span")[0];
+			input.onblur=function(){
+				var vla=input.value;
+				if (vla=="") {
+					span.innerHTML="不能为空";
+					span.className="wrong"
+					
+				}else if(vla<0||vla>150){
+					span.innerHTML="不在范围内";
+					span.className="wrong"
+				}else if(isNaN(Number(vla))){
+					span.innerHTML="不是数值";
+					span.className="wrong"
+				}else{
+					span.innerHTML="输入正确";
+					span.className="right"
+				}
+			}
+		</script>
+	</body>
+</html>

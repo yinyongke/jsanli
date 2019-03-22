@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+		*{
+				margin: 0;
+				padding: 0;
+			}
+			.box{
+				width: 600px;
+				height: 200px;
+				margin: 40px auto;
+				background-color: pink;
+				position: relative;
+				overflow:hidden;
+			}
+			.box ul{
+				position: absolute;
+				list-style: none;
+				top: 0;
+				left: 0;
+				width:400%;
+			}
+			.box ul li{
+				float: left;
+			}
+			img{
+				float: left;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box" class="box">
+			<ul>
+				<li><img src="img/01.jpg"/></li>
+				<li><img src="img/02.jpg"/></li>
+				<li><img src="img/03.jpg"/></li>
+				<li><img src="img/04.jpg"/></li>
+				
+				<li><img src="img/01.jpg"/></li>
+				<li><img src="img/02.jpg"/></li>
+			</ul>
+			
+		</div>
+		<script>
+			var ul=document.getElementsByTagName("ul")[0];
+            var div=document.getElementById("box");
+             var num=0;
+          function move1(){
+    	if (num<-1200) {
+    		num=0;
+    	}else{
+    		num--;
+    	}
+    	ul.style.left=num+"px";
+    }
+      var time=setInterval(move1,30);
+      div.onmouseover=function(){
+      	clearInterval(time);
+      }
+      div.onmouseout=function(){
+      	 time=setInterval(move1,30)
+      }
+   var ul=document.getElementsByTagName("ul")[0];
+   var div=document.getElementById("box");
+   var num=0;
+
+     function move2 (){
+     	if (num<-1200) {
+     		num=0;
+     	} else{
+     		num--;
+     	}
+     	ul.style.left=num+"px";
+     }
+    var time=setInterval(move2,30);
+    div.onmouseover=function(){
+    	clearInterval(time);
+    }
+    div.onmouseout=function(){
+    	time=setInterval(move2,30);
+    }
+		</script>
+	</body>
+</html>

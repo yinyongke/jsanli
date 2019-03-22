@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.box{
+				width: 600px;
+				height: 200px;
+				margin: 100px auto;
+				position: relative;
+				overflow: hidden;
+				background-color: pink;
+			}
+			ul{
+				position: absolute;
+				list-style: none;
+				top: 0;
+				left: 0;
+				width: 400%;
+			}
+			img{
+				float: left;
+			}
+			ul li{
+				float: left;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box" class="box">
+		   <ul>
+		   	<li><img src="img/01.jpg"/></li>
+		   	<li><img src="img/02.jpg"/></li>
+		   	<li><img src="img/03.jpg"/></li>
+		   	<li><img src="img/04.jpg"/></li>
+		   	<li><img src="img/01.jpg"/></li>
+		   	<li><img src="img/02.jpg"/></li>
+		   </ul>	
+			<script>
+				var div=document.getElementsByTagName("div")[0];
+				var ul=document.getElementsByTagName("ul")[0];
+				var num=0;
+				var time=null;
+				function move(){
+					if (num<-1200) {
+						num=0
+					} else{
+						num--
+					}
+					ul.style.left=num+"px";
+				}
+				time=setInterval(move,30)
+				div.onmouseout=function(){
+					clearInterval(time);
+				}
+				div.onmouseout=function(){
+					time=setInterval(move,30);
+				}
+			</script>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	<div id="">
+		
+	</div>
+		<script>
+		setInterval(daoji,1000)
+			function daoji () {
+				var date=new Date();
+				var date1=new Date("2019/3/23  11:00:10");
+				//时间戳，毫秒数
+				var time=date1.getTime()- date.getTime();
+				//计算相差秒数
+				var second=time/1000;
+				//计算天数
+				var  day=parseInt(second/3600/24);
+				//计算小时
+				var hour=parseInt(second/3600%24);
+				//计算分钟
+				var fen=second-day*24*3600-hour*3600;
+				var min=parseInt(fen/60);
+				var s=parseInt(fen%60)
+				document.getElementsByTagName("div")[0].innerHTML="倒计时"+day+"天"+hour+"小时"+min+"分"+s+"秒"				
+			}
+		</script>
+	</body>
+</html>

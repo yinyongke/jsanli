@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+		*{
+				margin: 0;
+				padding: 0;
+			}
+			body{
+				background-color: black;
+			}
+			.box{
+				width: 800px;
+				height: 42px;
+				background: url(img/rss.png) no-repeat right center #FFFFFF;
+				margin: 100px auto;
+				position: relative;
+			}
+			.box span{
+				background: url(img/cloud.gif) no-repeat;
+				width: 83px;
+				height: 42px;
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+			.box ul{
+				list-style: none;
+				/*小技巧*/
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+			.box ul li{
+				float: left;
+				width: 83px;
+				height: 42px;
+				text-align: center;
+				line-height: 42px;
+				cursor: pointer;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box" id="box">
+			<span id="cloud"></span>
+			<ul>
+				<li>新闻首页</li>
+				<li>新闻首页</li>
+				<li>新闻首页</li>
+				<li>新闻首页</li>
+				<li>新闻首页</li>
+				<li>新闻首页</li>
+				<li>新闻首页</li>
+				<li>新闻首页</li>
+			</ul>
+		</div>
+		<script>
+			var span=document.getElementById("cloud");
+			var li=document.getElementsByTagName("li");
+			var num=0,star=0;
+			var cunt=0
+			for (var i=0;i<li.length;i++) {
+				li[i].onmouseover=function() {
+					num=this.offsetLeft;
+//					span.style.left=num+"px";
+				}
+				
+				li[i].onclick=function(){
+					cunt=this.offsetLeft
+				}
+				li[i].onmouseout=function  () {
+					num=cunt
+				}
+				
+				
+			}
+			setInterval(function  () {
+				star=star+(num-star);
+				span.style.left=star+"px"
+			},3)
+		</script>
+	</body>
+</html>

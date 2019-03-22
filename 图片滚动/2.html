@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#box{
+				width: 600px;
+				height: 200px;
+				margin: 40px auto;
+				position: relative;
+				background-color: pink;
+				overflow: hidden;
+				
+			}
+			ul{
+				list-style: none;
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				width: 400%;
+			}
+			ul li{
+				float: left;
+				
+			}
+			img{
+				float: left;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<ul>
+				<li><img src="img/01.jpg"/></li>
+				<li><img src="img/02.jpg"/></li>
+				<li><img src="img/03.jpg"/></li>
+				<li><img src="img/04.jpg"/></li>
+				<li><img src="img/01.jpg"/></li>
+				<li><img src="img/02.jpg"/></li>
+			</ul>
+		</div>
+		<script type="text/javascript">
+			var div=document.getElementById("box");
+			var ul=document.getElementsByTagName("ul")[0];
+			var num=0;
+			var time;
+			function move2 () {
+				if (num<-1200) {
+					num=0
+				} else{
+					num--;
+				}
+				ul.style.left=num+"px";
+			}
+			time=setInterval(move2,30)
+			ul.onmouseover=function(){
+				clearInterval(time);
+			}
+			ul.onmouseout=function(){
+				time=setInterval(move2,30);
+			}
+		</script>
+	</body>
+</html>

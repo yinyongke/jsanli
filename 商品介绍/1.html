@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				padding: 0px;
+				margin: 0px;
+			}
+			#zheng{
+				width: 340px;
+				height: 460px;
+				margin: 100px auto;
+				border: 1px solid black;
+			}
+			#shang{
+				width: 340px;
+				height: 400px;
+				background: url(img/01big.jpg) no-repeat;
+			}
+			#xia{
+				width: 100%;
+				height: 60px;
+			}
+			#xia img{
+				width: 20%;
+				height: 60px;
+				float: left;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="zheng">
+			<div id="shang">
+				
+			</div>
+			<div id="xia">
+				<img src="img/01.jpg" />
+				<img src="img/02.jpg" />
+				<img src="img/03.jpg" />
+				<img src="img/04.jpg" />
+				<img src="img/05.jpg" />
+			</div>
+		</div>
+		<script>
+			var img=document.getElementsByTagName("img");
+			var shang=document.getElementById("shang");
+			img[0].onmouseover=function(){
+				shang.style.backgroundImage="url(img/01big.jpg)";
+			}
+			img[1].onmouseover=function(){
+				shang.style.backgroundImage="url(img/02big.jpg)";
+			}
+			img[2].onmouseover=function(){
+				shang.style.backgroundImage="url(img/03big.jpg)";
+			}
+			img[3].onmouseover=function(){
+				shang.style.backgroundImage="url(img/04big.jpg)";
+			}
+			img[4].onmouseover=function(){
+				shang.style.backgroundImage="url(img/05big.jpg)";
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div{
+				width: 100Px;
+				height: 100px;
+				position: absolute;
+				left: 0px;
+				background-color: pink;
+			}
+		</style>
+	</head>
+	<body>
+		<button>
+			点击
+		</button>
+		<div id="">
+			
+		</div>
+		<script>
+			var div=document.getElementsByTagName("div")[0];
+			var btn=document.getElementsByTagName("button")[0];
+			var num=0;
+			btn.onclick=function(){
+				var time=setInterval(function () {
+					if (num<400) {
+						num++
+						div.style.left=num+"px"
+					} else{
+						clearInterval(time)
+					}
+				},30)
+			}
+		</script>
+	</body>
+</html>

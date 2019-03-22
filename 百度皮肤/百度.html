@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<script type="text/javascript" src="js/baidu.js" ></script>
+	
+	
+		<style type="text/css">
+			*{
+				padding: 0px;
+				margin: 0px;
+			}
+			#box{
+				width: 1000px;
+				
+				margin: 100px auto;
+				
+				
+			}
+			body{
+				background-image: url(img/1.jpg);
+			}
+			#box img{
+				width: 200px;
+				height: 100px;
+				float: left;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div id="box">
+		<img src="img/1.jpg" />
+		<img src="img/2.jpg"/>
+		<img src="img/3.jpg"/>
+		<img src="img/4.jpg" />
+		<img src="img/5.jpg" />
+		</div>
+		<script>
+//			window.onload=function(){
+//				var qq=document.getElementsByTagName("img");
+//				
+//				qq[0].onclick=function(){
+//					document.body.style.backgroundImage="url(img/1.jpg)"
+//				}
+//				qq[1].onclick=function(){
+//					document.body.style.backgroundImage="url(img/2.jpg)"
+//				}
+//				qq[2].onclick=function(){
+//					document.body.style.backgroundImage="url(img/3.jpg)"
+//				}
+//				qq[3].onclick=function(){
+//					document.body.style.backgroundImage="url(img/4.jpg)"
+//				}
+//				qq[4].onclick=function(){
+//					document.body.style.backgroundImage="url(img/5.jpg)"
+//				}
+//			}
+//				
+		  var img=document.getElementsByTagName("img")[0];	 
+		  for (var i=0;i<img.length;i++) {
+	  	     img[i].onclick=(function(e){
+		  	 var imgulr=e.target.getAttribute("src");
+		  	   document.body.style.backgroundImage="url("+imgulr+")";
+		  	})(i)
+		  }
+		</script>
+	</body>
+</html>

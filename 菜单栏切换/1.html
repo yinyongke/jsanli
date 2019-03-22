@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+		#header{
+			width: 100%;
+			height: 100px;
+			background: yellow;
+		}
+		#cont{
+			width: 1000px;
+			height: 100px;
+			margin: 100px auto;
+			background: pink;
+		}
+			a{
+				text-decoration: none;
+				color: white;
+				float: left;
+				width: 200px;
+				height: 100px;
+				text-align: center;
+				line-height: 100px;
+			}
+			#cont a:hover{
+				background:yellowgreen;
+			}
+			#cont a.active{
+				background-color: red;
+			}
+			#body{
+				width: 100%;
+				height: 200px;
+				background-color: pink;
+			}
+			#body .item{
+				display: none;
+				width: 100%;
+				height: 200px;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="header">
+			<div id="cont">
+				<a href="#" class="active">首页</a>
+				<a href="#">首页</a>
+				<a href="#">首页</a>
+				<a href="#">首页</a>
+				<a href="#">首页</a>
+			</div>
+		</div>
+		<div id="body">
+			<div class="item" style="display: block;">11111</div>
+			<div class="item">22222</div>
+			<div class="item">333333</div>
+			<div class="item">444444</div>
+			<div class="item">555555</div>
+			
+		</div>
+		<script>
+			var lis=document.getElementsByTagName("a");
+			var lin=document.getElementsByClassName("item");
+			for (var i=0;i<lis.length;i++) {
+				(function(i){
+					lis[i].onclick=function(){
+						for (var j=0;j<lis.length;j++) {
+							lin[j].style.display="none";
+							lis[j].className="";
+						}
+						lin[i].style.display="block";
+							lis[j].className="active";
+					}
+				})(i)
+				
+			}
+		</script>
+	</body>
+</html>

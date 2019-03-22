@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				padding: 0px;
+				margin: 0px;
+			}
+			#header{
+				width: 100%;
+				height: 100px;
+			}
+			#header #cont{
+				width: 1000px;
+				height: 100px;
+				margin: 0px auto;
+			
+			}
+			a{
+				text-decoration: none;
+				text-align: center;
+				color: black;
+				float: left;
+				width: 200px;
+				height: 100px;
+				background-color: gold;
+				line-height: 100px;
+				
+			}
+			 #header a.active{
+				background-color: palevioletred;
+				color: white;
+			}
+			a:hover{
+				background-color: cyan;
+				color: write;
+			}
+			#body{
+				width:100%;
+				height: 300px;
+				background-color:yellowgreen ;
+			}
+			#body .item{
+				width: 100%;
+				height: 200px;
+				display: none;
+				
+			}
+			
+			
+			 
+		</style>
+	</head>
+	<body>
+		<div id="header">
+			<div id="cont">
+				<a href="#" class="active">首页</a>
+				<a href="#">首页</a>
+				<a href="#">首页</a>
+				<a href="#">首页</a>
+				<a href="#">首页</a>
+			</div>
+		</div>
+	    <div id="body">
+			<div class="item" style="display: block;">55555</div>
+			<div class="item">111111</div>
+			<div class="item">22222</div>
+			<div class="item">333333</div>
+			<div class="item">444444</div>
+			
+		</div>
+		<script>
+		window.onload=function(){
+			var lis=document.getElementsByTagName("a");
+			var itms=document.getElementsByClassName("item");
+			for (var i=0;i<lis.length;i++) {
+				(function(i){
+					lis[i].onclick=function(){
+						for (var j=0;j<lis.length;j++) {
+							lis[j].className="";
+							itms[j].style.display="none"
+						}
+						lis[i].className="active";
+						itms[i].style.display="block";
+					}
+				})(i);
+			}
+		}
+		
+//		  window.onload=function(){
+//				var links = document.getElementsByTagName("a");
+//				var items=document.getElementsByClassName("item");
+//				for(var i=0;i<links.length;i++){
+//					(function(i){
+//						links[i].onclick = function(){
+//							//排他思想
+//							for(var j=0;j<links.length;j++){
+//								links[j].className="";
+//								items[j].style.display="none";
+//							}
+//							links[i].className="active";
+//							items[i].style.display="block";
+//						}
+//					})(i)
+//		
+//				}
+//		
+//				
+//				
+//				
+//				
+//			}
+			
+   
+		
+		</script>
+	</body>
+</html>
